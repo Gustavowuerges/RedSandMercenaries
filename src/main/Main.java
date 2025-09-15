@@ -1,3 +1,5 @@
+package main;
+
 import main.java.game.game;
 
 public class Main {
