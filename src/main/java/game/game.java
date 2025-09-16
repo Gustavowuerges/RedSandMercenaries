@@ -2,7 +2,9 @@ package main.java.game;
 
 import java.util.Scanner;
 
+import main.java.Map.AsciiMap;
 import main.java.Map.MapGrid;
+import main.java.Map.MapRender;
 
 
 public class game {
@@ -25,6 +27,8 @@ public class game {
             cmd = Keyboard.nextLine();
 
             if(cmd.equalsIgnoreCase("mapa")){
+                AsciiMap.ShowMap("Map.txt", 120);
+            }else if(cmd.equalsIgnoreCase("mapa mini")){
                 MapRender.printMinimap(overworld, pL, pC);
             }else if (cmd.equalsIgnoreCase("sair")) {
                 System.out.println("saindo...");
