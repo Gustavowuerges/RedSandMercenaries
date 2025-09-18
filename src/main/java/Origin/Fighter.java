@@ -1,15 +1,19 @@
 package main.java.Origin;
-import main.java.GlobalStatus;;
+import main.java.MainCharacter;
 
-public class Fighter extends GlobalStatus {
+public class Fighter extends MainCharacter {
 
     public void Description() { 
-        System.out.println( "Sob o sol inclemente do deserto, caminha o guerreiro de braços firmes e olhos frios.\n" +
-                 "Cada golpe que desferem é marcado pelo suor e pelo sangue das areias,\n" +
-                 "e cada passo deixa uma sombra que parece mais pesada que a própria morte.");
+        System.out.println( "Under the harsh desert sun walks the warrior with steady arms and cold eyes. \n" +
+                            "Every strike they deliver is marked by the sweat and blood of the sands,\n " +
+                            "and each step leaves a shadow that feels heavier than death itself.");
         return;
     }
     public Fighter() {
-        super(12, 3, 9, 3, 4, 4);
+        super("Fighter",6, 7, 5, 6, 3, 3);
+    }
+
+    public void displayClassStatus() {
+        super.showStatus();
     }
 }

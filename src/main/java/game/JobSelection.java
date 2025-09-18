@@ -1,62 +1,51 @@
 package main.java.game;
-import main.*;
-import main.java.Origin.Archer;
-import main.java.Origin.Cultist;
-import main.java.Origin.Fighter;
-import main.java.Origin.Guardian;
-import main.java.Origin.Oracle;
-import main.java.Origin.Thief;
-
+import main.java.Origin.*;
+import main.java.MainCharacter;
 import java.util.Scanner;
+import javax.swing.Action;
 
 public class JobSelection {
-    public static void main(String[] args) throws InterruptedException {
-        //Tornando Classes em Objetos
-        Fighter fighter = new Fighter();
-        Thief thief = new Thief();
-        Archer archer = new Archer();
-        Guardian guardian = new Guardian();
-        Cultist cultist = new Cultist();
-        Oracle oracle = new Oracle();
 
-        //Description do JobSelection
+    public void textEffect(String text) throws InterruptedException {
+        for (char c : text.toCharArray()) {
+           System.out.print(c);   
+           Thread.sleep(10);      
+           }
+           return;
+       }
+
+    public static void main(String[] args) {
         Scanner keyboard = new Scanner(System.in);
-        String selectionText = "No coração do deserto, onde o vento molda dunas eternas e o sol inclemente testa a coragem dos homens, apenas os mais fortes sobrevivem. Mercenários vindos de terras distantes se reúnem sob a bandeira da areia vermelha, cada um com sua arte de guerra, sua honra — ou sua ganância. Escolha com sabedoria: sua classe será sua identidade diante da vastidão árida e dos inimigos que a espreitam nas sombras das caravanas, dos oásis e das ruínas esquecidas.";
-        
-        for (char c : selectionText.toCharArray()) {
-            System.out.print(c);   
-            Thread.sleep(10);      
-        }
+        MainCharacter chosenClass = null; // polimorfismo aqui
+        int i = 0;
 
-        System.out.println("\n1. [Fighter]" + "\n2. [Guardian] " + "\n3. [Thief] " + "\n4. [Archer]" + "\n5. [Cultist] " + "\n6. [Oracle]");
-        
-        int option = keyboard.nextInt();
-        
+        MainCharacter[] classes = {
+            new Archer(),
+            new Cultist(),
+            new Fighter(),
+            new Guardian(),
+            new Oracle(),
+            new Thief()
+        };
 
-        switch (option) {
-            case 1:
-                fighter.Description();
-                break;
-        
-            case 2:
-                guardian.Description();
-                break;
-
-            case 3:
-                thief.Description();
-                break;
-
-            case 4:      
-                archer.Description();
-                break;
-
-            case 5:   
-                cultist.Description();
-                break;
+        while (chosenClass == null) {
+            System.out.println("Press 'a' or 'd' to browse the classes! And when you want to choose, press 'e'!\n");
+            System.out.println(classes[i].className);
+            classes[i].displayClassStatus();
+            classes[i].Description();
+            System.out.println("(" + (i + 1) + "/" + classes.length +")");
+            String input = keyboard.nextLine();
             
-            case 6:      
-                oracle.Description();
-                break;
-        }
+            if(input.equals("a")) { 
+              i = (i - 1 + classes.length) % classes.length;
+            } else if (input.equals("d")) {
+              i = (i + 1) % classes.length;
+            } else if(input.equals("e")) {
+                chosenClass = classes[i];
+            }
+
+            System.out.print("\033[H\033[2J");
+            System.out.flush();
+        }      
     }
 }
