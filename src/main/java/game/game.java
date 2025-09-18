@@ -2,7 +2,6 @@ package main.java.game;
 
 import java.util.Scanner;
 
-import main.java.Map.AsciiMap;
 import main.java.Map.MapGrid;
 import main.java.Map.MapRender;
 
@@ -16,7 +15,7 @@ public class game {
         overworld.tiles[2][3] = '█';
         overworld.visited[pL][pC] = true;
     }
-
+ 
     public void ready(){
         Scanner Keyboard = new Scanner(System.in);
         String cmd;
@@ -27,8 +26,6 @@ public class game {
             cmd = Keyboard.nextLine();
 
             if(cmd.equalsIgnoreCase("mapa")){
-                AsciiMap.ShowMap("Map.txt", 120);
-            }else if(cmd.equalsIgnoreCase("mapa mini")){
                 MapRender.printMinimap(overworld, pL, pC);
             }else if (cmd.equalsIgnoreCase("sair")) {
                 System.out.println("saindo...");
