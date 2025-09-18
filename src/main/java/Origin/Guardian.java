@@ -1,7 +1,7 @@
 package main.java.Origin;
-import main.java.GlobalStatus;;
+import main.java.MainCharacter;
 
-public class Guardian extends GlobalStatus {
+public class Guardian extends MainCharacter {
     public void Description() {  
         System.out.println("O escudo levantado, a figura se ergue como muralha contra horrores\n" +
                   "que rastejam sob a areia vermelha.\n" +
@@ -11,6 +11,10 @@ public class Guardian extends GlobalStatus {
     }
 
     public Guardian() {
-        super(12, 3, 9, 3, 4, 4);
+        super("Guardian",12, 3, 9, 3, 4, 4);
+    }
+
+    public void displayClassStatus() {
+        super.showStatus();
     }
 }

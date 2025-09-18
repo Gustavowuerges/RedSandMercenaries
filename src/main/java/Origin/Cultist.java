@@ -1,7 +1,7 @@
 package main.java.Origin;
-import main.java.GlobalStatus;;
+import main.java.MainCharacter;
 
-public class Cultist extends GlobalStatus {
+public class Cultist extends MainCharacter {
 
     public void Description() { 
         System.out.println("Nos labirintos de ruínas esquecidas e enterradas pela areia,\n" +
@@ -12,6 +12,10 @@ public class Cultist extends GlobalStatus {
     }
 
     public Cultist() {
-        super(12, 3, 9, 3, 4, 4);
+        super("Cultist",12, 3, 9, 3, 4, 4);
+    }
+
+    public void displayClassStatus() {
+        super.showStatus();
     }
 }

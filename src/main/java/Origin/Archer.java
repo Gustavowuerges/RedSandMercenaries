@@ -1,7 +1,7 @@
 package main.java.Origin;
-import main.java.GlobalStatus;
+import main.java.MainCharacter;
 
-public class Archer extends GlobalStatus {
+public class Archer extends MainCharacter {
 
     public void Description() {
         System.out.println("Entre as dunas vermelhas que parecem engolir o horizonte,\n" +
@@ -12,6 +12,10 @@ public class Archer extends GlobalStatus {
 
 
     public Archer() {
-        super(12, 3, 9, 3, 4, 4);
+        super("Archer",12, 3, 9, 3, 4, 4);
+    }
+
+    public void displayClassStatus() {
+        super.showStatus();
     }
 }

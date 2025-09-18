@@ -1,7 +1,7 @@
 package main.java.Origin;
-import main.java.GlobalStatus;;
+import main.java.MainCharacter;
 
-public class Thief extends GlobalStatus {
+public class Thief extends MainCharacter {
     public void Description() { 
         System.out.println("Ágil como o vento que varre as dunas, move-se nas sombras\n" +
                "e nos espaços esquecidos pelo sol.\n" +
@@ -11,6 +11,11 @@ public class Thief extends GlobalStatus {
     }
 
     public Thief() {
-        super(12, 3, 9, 3, 4, 4);
+        super("Thief", 12, 3, 9, 3, 4, 4);
     }
+
+    public void displayClassStatus() {
+        super.showStatus();
+    }
+
 }

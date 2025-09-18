@@ -1,7 +1,7 @@
 package main.java.Origin;
-import main.java.GlobalStatus;;
+import main.java.MainCharacter;
 
-public class Oracle extends GlobalStatus {
+public class Oracle extends MainCharacter {
     public void Description() {  
         System.out.println("Entre tempestades de areia e miragens que confundem a visão,\n" +
                 "o oráculo contempla o inevitável.\n" +
@@ -10,6 +10,10 @@ public class Oracle extends GlobalStatus {
     return;
     }
     public Oracle() {
-        super(12, 3, 9, 3, 4, 4);
+        super("Oracle", 12, 3, 9, 3, 4, 4);
+    }
+
+    public void displayClassStatus() {
+        super.showStatus();
     }
 }

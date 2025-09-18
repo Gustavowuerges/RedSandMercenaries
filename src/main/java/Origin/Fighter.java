@@ -1,7 +1,8 @@
 package main.java.Origin;
-import main.java.GlobalStatus;;
+import main.java.GlobalStatus;
+import main.java.MainCharacter;
 
-public class Fighter extends GlobalStatus {
+public class Fighter extends MainCharacter {
 
     public void Description() { 
         System.out.println( "Sob o sol inclemente do deserto, caminha o guerreiro de braços firmes e olhos frios.\n" +
@@ -10,6 +11,10 @@ public class Fighter extends GlobalStatus {
         return;
     }
     public Fighter() {
-        super(12, 3, 9, 3, 4, 4);
+        super("Fighter",12, 3, 9, 3, 4, 4);
+    }
+
+    public void displayClassStatus() {
+        super.showStatus();
     }
 }
