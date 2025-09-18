@@ -3,7 +3,6 @@ package main.java.game;
 import java.util.Scanner;
 
 import main.java.Map.MapGrid;
-import main.java.Map.MapRender;
 
 
 public class game {
@@ -15,7 +14,7 @@ public class game {
         overworld.tiles[2][3] = '█';
         overworld.visited[pL][pC] = true;
     }
- 
+
     public void ready(){
         Scanner Keyboard = new Scanner(System.in);
         String cmd;
