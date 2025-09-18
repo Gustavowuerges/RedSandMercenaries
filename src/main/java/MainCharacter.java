@@ -15,5 +15,8 @@ public abstract class MainCharacter extends GlobalStatus {
         super.showStatus();
     }
 
+}
+
     public abstract void Description();
 }
+
