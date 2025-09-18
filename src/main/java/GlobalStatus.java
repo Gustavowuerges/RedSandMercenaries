@@ -18,4 +18,10 @@ public class GlobalStatus {
     this.globalFaith = globalFaith;
     this.globalInteligence = globalInteligence;
     }
+
+    public void showStatus() {
+        System.out.println("HP: " + globalHealth + " | STR: " + globalStrength + " | DEX: " + globalDexterity +
+                           " | FOR: " + globalFortitude + " | INT: " + globalInteligence + " | FTH: " + globalFaith);
+    }
+
 }
