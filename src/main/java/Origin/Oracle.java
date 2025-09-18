@@ -3,14 +3,14 @@ import main.java.MainCharacter;
 
 public class Oracle extends MainCharacter {
     public void Description() {  
-        System.out.println("Entre tempestades de areia e miragens que confundem a visão,\n" +
-                "o oráculo contempla o inevitável.\n" +
-                "Cada visão carrega o peso de segredos que corroem a sanidade,\n" +
-                "e cada passo é guiado por destinos que nenhum homem ousaria desafiar.");
+        System.out.println("Amid sandstorms and mirages that confuse the sight,\n" +
+                            "the Oracle contemplates the inevitable.\n" +
+                            "Each vision carries the weight of secrets that corrode the mind,\n" +
+                            "and each step is guided by destinies no mortal would dare defy.");
     return;
     }
     public Oracle() {
-        super("Oracle", 12, 3, 9, 3, 4, 4);
+        super("Oracle", 4, 2, 3, 4, 8, 9);
     }
 
     public void displayClassStatus() {
