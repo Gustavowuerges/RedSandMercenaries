@@ -1,8 +1,8 @@
 package main.java.Map;
 
-public class MapRender {
+class MapRender {
 
-    public static void printMinimap(MapGrid map, int pL, int pC){
+    static void printMinimap(MapGrid map, int pL, int pC){
         StringBuilder sb = new StringBuilder();
         //percore o mapa linha por linha (L) e coluna por coluna (C)
         for (int l = 0; l < map.height; l++){
