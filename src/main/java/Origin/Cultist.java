@@ -1,17 +1,21 @@
 package main.java.Origin;
-import main.java.GlobalStatus;;
+import main.java.MainCharacter;
 
-public class Cultist extends GlobalStatus {
+public class Cultist extends MainCharacter {
 
     public void Description() { 
-        System.out.println("Nos labirintos de ruínas esquecidas e enterradas pela areia,\n" +
-                    "sussurros antigos serpenteiam entre pedras e ossos.\n" +
-                    "Ali, o cultista invoca forças que a mente humana não deveria conhecer,\n" +
-                    "moldando a carne e a alma de quem ousa se aproximar.");
+        System.out.println("In the labyrinths of ruins forgotten and buried by the sand, \n" +
+                           "ancient whispers slither among stones and bones. \n" +
+                           "There, the cultist summons forces that the human mind should not know, \n" +
+                           "shaping the flesh and soul of those who dare to approach.");
         return;
     }
 
     public Cultist() {
-        super(12, 3, 9, 3, 4, 4);
+        super("Cultist",4, 3, 4, 4, 8, 8);
+    }
+
+    public void displayClassStatus() {
+        super.showStatus();
     }
 }
