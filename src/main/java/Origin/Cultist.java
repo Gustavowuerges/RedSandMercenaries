@@ -11,8 +11,8 @@ public class Cultist extends MainCharacter {
         return;
     }
 
-    public Cultist() {
-        super("Cultist",4, 3, 4, 4, 8, 8);
+    public Cultist(String name) {
+        super("","Cultist",4, 3, 4, 4, 8, 8);
     }
 
     public void displayClassStatus() {
