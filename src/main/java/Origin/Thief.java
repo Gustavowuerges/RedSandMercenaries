@@ -10,8 +10,8 @@ public class Thief extends MainCharacter {
     return;
     }
 
-    public Thief() {
-        super("Thief", 4, 4, 10, 3, 5, 4);
+    public Thief(String name) {
+        super("","Thief", 4, 4, 10, 3, 5, 4);
     }
 
     public void displayClassStatus() {

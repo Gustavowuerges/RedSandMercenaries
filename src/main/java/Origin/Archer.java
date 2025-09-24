@@ -11,8 +11,8 @@ public class Archer extends MainCharacter {
     } 
 
 
-    public Archer() {
-        super("Archer",5, 4, 9, 4, 4, 4);
+    public Archer(String name) {
+        super("","Archer",5, 4, 9, 4, 4, 4);
     }
 
     public void displayClassStatus() {

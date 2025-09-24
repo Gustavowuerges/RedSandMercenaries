@@ -18,16 +18,21 @@ public class JobSelection {
     public MainCharacter startSelection() {
         Scanner keyboard = new Scanner(System.in);
         MainCharacter chosenClass = null;
+        String name = "";
         int i = 0;
 
         MainCharacter[] classes = {
-            new Archer(),
-            new Cultist(),
-            new Fighter(),
-            new Guardian(),
-            new Oracle(),
-            new Thief()
+            new Archer(name),
+            new Cultist(name),
+            new Fighter(name),
+            new Guardian(name),
+            new Oracle(name),
+            new Thief(name)
         };
+        
+        name = keyboard.nextLine();
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
 
         while (chosenClass == null) {
             System.out.println("Press 'a' or 'd' to browse the classes! And when you want to choose, press 'e'!\n");
@@ -43,6 +48,7 @@ public class JobSelection {
                 i = (i + 1) % classes.length;
             } else if (input.equals("e")) {
                 chosenClass = classes[i];
+                chosenClass.name = name;
             }
 
             System.out.print("\033[H\033[2J");
@@ -50,5 +56,6 @@ public class JobSelection {
         }
 
         return chosenClass;
+        
     }
 }

@@ -1,10 +1,13 @@
 package main.java.game;
-import main.java.Origin.*;
-import main.java.MainCharacter;
 
 public class GameStart {
-    public static void main(String[] args) {
+    public void start() {
+        Menu menu = new Menu();
+        menu.StartMenu(); // exibe menu principal
+        System.out.println("Welcome to the red dunes wanderer...tell me, who are you?");
+        
         JobSelection jobSelection = new JobSelection();
-        jobSelection.startSelection();
+        jobSelection.startSelection(); // player escolhe classe
+        
     }
 }

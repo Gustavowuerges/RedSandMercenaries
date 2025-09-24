@@ -9,8 +9,8 @@ public class Fighter extends MainCharacter {
                             "and each step leaves a shadow that feels heavier than death itself.");
         return;
     }
-    public Fighter() {
-        super("Fighter",6, 7, 5, 6, 3, 3);
+    public Fighter(String name) {
+        super("","Fighter",6, 7, 5, 6, 3, 3);
     }
 
     public void displayClassStatus() {

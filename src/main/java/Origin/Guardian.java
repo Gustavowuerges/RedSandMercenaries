@@ -9,8 +9,8 @@ public class Guardian extends MainCharacter {
     return;
     }
 
-    public Guardian() {
-        super("Guardian",7, 6, 3, 8, 3, 3);
+    public Guardian(String name) {
+        super("","Guardian",7, 6, 3, 8, 3, 3);
     }
 
     public void displayClassStatus() {

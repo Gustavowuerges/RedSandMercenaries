@@ -9,8 +9,8 @@ public class Oracle extends MainCharacter {
                             "and each step is guided by destinies no mortal would dare defy.");
     return;
     }
-    public Oracle() {
-        super("Oracle", 4, 2, 3, 4, 8, 9);
+    public Oracle(String name) {
+        super("","Oracle", 4, 2, 3, 4, 8, 9);
     }
 
     public void displayClassStatus() {
