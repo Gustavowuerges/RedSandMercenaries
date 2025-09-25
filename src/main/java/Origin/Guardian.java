@@ -1,7 +1,7 @@
 package main.java.Origin;
-import main.java.MainCharacter;
+import main.java.Entity;
 
-public class Guardian extends MainCharacter {
+public class Guardian extends Entity {
     public void Description() {  
         System.out.println("Those of unwavering will and utmost honour, the Guardians rise as living bulwarks upon the endless crimson sands.\n" + 
                            "Silent and resolute, they repel the relentless forces that stir beneath the desert,\n" +
@@ -10,10 +10,10 @@ public class Guardian extends MainCharacter {
     }
 
     public Guardian(String name) {
-        super("","Guardian",7, 6, 3, 8, 3, 3);
+        super(name,"Guardian",7, 6, 3, 8, 3, 3);
     }
 
     public void displayClassStatus() {
-        super.showStatus();
+        super.showClassStatus();
     }
 }

@@ -1,7 +1,7 @@
 package main.java.Origin;
-import main.java.MainCharacter;
+import main.java.Entity;
 
-public class Fighter extends MainCharacter {
+public class Fighter extends Entity {
 
     public void Description() { 
         System.out.println( "Under the harsh desert sun walks the warrior with steady arms and cold eyes. \n" +
@@ -10,10 +10,10 @@ public class Fighter extends MainCharacter {
         return;
     }
     public Fighter(String name) {
-        super("","Fighter",6, 7, 5, 6, 3, 3);
+        super(name,"Fighter",6, 7, 5, 6, 3, 3);
     }
 
     public void displayClassStatus() {
-        super.showStatus();
+        super.showClassStatus();
     }
 }

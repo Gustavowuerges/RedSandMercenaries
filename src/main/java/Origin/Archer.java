@@ -1,7 +1,7 @@
 package main.java.Origin;
-import main.java.MainCharacter;
+import main.java.Entity;
 
-public class Archer extends MainCharacter {
+public class Archer extends Entity {
 
     public void Description() {
         System.out.println("Among the red dunes that seem to swallow the horizon,\n" +
@@ -12,10 +12,12 @@ public class Archer extends MainCharacter {
 
 
     public Archer(String name) {
-        super("","Archer",5, 4, 9, 4, 4, 4);
+        super(name,"Archer",5, 4, 9, 4, 4, 4);
     }
 
     public void displayClassStatus() {
-        super.showStatus();
+        super.showClassStatus();
     }
+
+    
 }
