@@ -1,7 +1,7 @@
 package main.java.Origin;
-import main.java.MainCharacter;
+import main.java.Entity;
 
-public class Oracle extends MainCharacter {
+public class Oracle extends Entity {
     public void Description() {  
         System.out.println("Amid sandstorms and mirages that confuse the sight,\n" +
                             "the Oracle contemplates the inevitable.\n" +
@@ -10,10 +10,10 @@ public class Oracle extends MainCharacter {
     return;
     }
     public Oracle(String name) {
-        super("","Oracle", 4, 2, 3, 4, 8, 9);
+        super(name,"Oracle", 4, 2, 3, 4, 8, 9);
     }
 
     public void displayClassStatus() {
-        super.showStatus();
+        super.showClassStatus();
     }
 }

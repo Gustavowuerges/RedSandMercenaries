@@ -1,11 +1,13 @@
 package main.java.game;
 
 import main.java.Origin.*;
-import main.java.MainCharacter;
+import main.java.Entity;
+import main.java.GlobalStatus;
+
 import java.util.Scanner;
+import main.java.game.*;
 
 public class JobSelection {
-
     public Object chosenClass;
 
     public void textEffect(String text) throws InterruptedException {
@@ -15,13 +17,13 @@ public class JobSelection {
         }
     }
 
-    public MainCharacter startSelection() {
+    public Entity startSelection(String name) {
         Scanner keyboard = new Scanner(System.in);
-        MainCharacter chosenClass = null;
-        String name = "";
+        Entity chosenClass = null;
         int i = 0;
 
-        MainCharacter[] classes = {
+        
+        Entity[] classes = {
             new Archer(name),
             new Cultist(name),
             new Fighter(name),
@@ -29,11 +31,7 @@ public class JobSelection {
             new Oracle(name),
             new Thief(name)
         };
-        
-        name = keyboard.nextLine();
-        System.out.print("\033[H\033[2J");
-        System.out.flush();
-
+    
         while (chosenClass == null) {
             System.out.println("Press 'a' or 'd' to browse the classes! And when you want to choose, press 'e'!\n");
             System.out.println(classes[i].className);
@@ -48,14 +46,16 @@ public class JobSelection {
                 i = (i + 1) % classes.length;
             } else if (input.equals("e")) {
                 chosenClass = classes[i];
-                chosenClass.name = name;
             }
 
             System.out.print("\033[H\033[2J");
             System.out.flush();
+            Entity player = chosenClass;
+            player.showStatus();
         }
 
         return chosenClass;
+        
         
     }
 }

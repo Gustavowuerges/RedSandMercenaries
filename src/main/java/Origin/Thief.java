@@ -1,7 +1,7 @@
 package main.java.Origin;
-import main.java.MainCharacter;
+import main.java.Entity;
 
-public class Thief extends MainCharacter {
+public class Thief extends Entity {
     public void Description() { 
         System.out.println("Agile as the wind that sweeps the dunes, it moves through shadows\n" +
                             "and in spaces forgotten by the sun.\n" +
@@ -11,11 +11,11 @@ public class Thief extends MainCharacter {
     }
 
     public Thief(String name) {
-        super("","Thief", 4, 4, 10, 3, 5, 4);
+        super(name,"Thief", 4, 4, 10, 3, 5, 4);
     }
 
     public void displayClassStatus() {
-        super.showStatus();
+        super.showClassStatus();
     }
 
 }

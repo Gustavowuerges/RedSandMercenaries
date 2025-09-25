@@ -1,13 +1,23 @@
 package main.java.game;
+import main.java.*;
+import main.java.Origin.*;
+import java.util.Scanner;
 
 public class GameStart {
+    public String name;
     public void start() {
         Menu menu = new Menu();
-        menu.StartMenu(); // exibe menu principal
-        System.out.println("Welcome to the red dunes wanderer...tell me, who are you?");
+        Scanner keyboard = new Scanner(System.in);
+
+        menu.StartMenu(); 
+        System.out.println("Welcome to the red dunes wanderer...tell me, who are you? >");
+        name = keyboard.next();
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
+
         
         JobSelection jobSelection = new JobSelection();
-        jobSelection.startSelection(); // player escolhe classe
+        Entity player = jobSelection.startSelection(name);
         
     }
 }

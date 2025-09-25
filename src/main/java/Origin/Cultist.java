@@ -1,7 +1,7 @@
 package main.java.Origin;
-import main.java.MainCharacter;
+import main.java.Entity;
 
-public class Cultist extends MainCharacter {
+public class Cultist extends Entity {
 
     public void Description() { 
         System.out.println("In the labyrinths of ruins forgotten and buried by the sand, \n" +
@@ -12,10 +12,10 @@ public class Cultist extends MainCharacter {
     }
 
     public Cultist(String name) {
-        super("","Cultist",4, 3, 4, 4, 8, 8);
+        super(name,"Cultist",4, 3, 4, 4, 8, 8);
     }
 
     public void displayClassStatus() {
-        super.showStatus();
+        super.showClassStatus();
     }
 }
