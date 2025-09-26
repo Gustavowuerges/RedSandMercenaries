@@ -10,14 +10,15 @@ public class GameStart {
         Scanner keyboard = new Scanner(System.in);
 
         menu.StartMenu(); 
-        System.out.println("Welcome to the red dunes wanderer...tell me, who are you? >");
+        System.out.println("Welcome to the red dunes wanderer...tell me, who are you? \n>");
         name = keyboard.next();
         System.out.print("\033[H\033[2J");
         System.out.flush();
-
         
         JobSelection jobSelection = new JobSelection();
         Entity player = jobSelection.startSelection(name);
-        
+        player.showStatus();
     }
+
+
 }
