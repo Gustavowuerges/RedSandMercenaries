@@ -1,5 +1,7 @@
 package main.java.Events.principalEvents;
 
-public class AssaultEvent {
+import main.java.Events.Events;
+
+public class AssaultEvent implements Events {
     
 }

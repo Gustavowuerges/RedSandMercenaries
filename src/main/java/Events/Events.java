@@ -1,7 +1,9 @@
 package main.java.Events;
 
-class Events {
+public interface Events {
 
-    
+    public void Executar();
+
+
     
 }
