@@ -1,8 +1,10 @@
 package main.java;
+import main.java.game.JobSelection;
 
 public class GlobalStatus {
     //Atributos Modificadores Globais
     protected String globalName;
+    protected String globalClassName;
     protected int globalHealth;
     protected int globalStrength;
     protected int globalDexterity;
@@ -11,8 +13,9 @@ public class GlobalStatus {
     protected int globalInteligence;
 
     
-    public GlobalStatus(String globalName, int globalHealth, int globalStrength, int globalDexterity, int globalFortitude, int globalFaith, int globalInteligence) {
+    public GlobalStatus(String globalName, String globalClassName, int globalHealth, int globalStrength, int globalDexterity, int globalFortitude, int globalFaith, int globalInteligence) {
     this.globalName = globalName;
+    this.globalClassName = globalClassName;
     this.globalHealth = globalHealth;
     this.globalStrength = globalStrength;
     this.globalDexterity = globalDexterity;
@@ -21,8 +24,13 @@ public class GlobalStatus {
     this.globalInteligence = globalInteligence;
     }
 
+    //Getters
+    public String getClassName() {
+        return globalClassName;
+    }
+
     public void showStatus() {
-        System.out.println("Name: " + globalName + " | HP: " + globalHealth + " | STR: " + globalStrength + " | DEX: " + globalDexterity +
+        System.out.println("Name: " + globalName + " | Class: " +  globalClassName + " | HP: " + globalHealth + " | STR: " + globalStrength + " | DEX: " + globalDexterity +
                            " | FOR: " + globalFortitude + " | INT: " + globalInteligence + " | FTH: " + globalFaith);
     }
 
