@@ -4,13 +4,17 @@ public class GlobalStatus {
     // Atributos Modificadores Globais
     private double globalHP;
     private double globalMP;
+    private double globalLVL;
+    private double globalEXP;
     private double globalSTR;
     private double globalDEX;
     private double globalFORT;
     private double globalFAITH;
     private double globalINTEL;
 
-    public GlobalStatus(double globalHP, double globalMP, double globalSTR, double globalDEX, double globalFORT, double globalFAITH, double globalINTEL) {
+    public GlobalStatus(double globalLVL, double globalEXP, double globalHP, double globalMP, double globalSTR, double globalDEX, double globalFORT, double globalFAITH, double globalINTEL) {
+        this.globalLVL = globalLVL;
+        this.globalEXP = globalEXP;
         this.globalHP = globalHP;
         this.globalMP = globalMP;
         this.globalSTR = globalSTR;
@@ -21,6 +25,8 @@ public class GlobalStatus {
     }
 
     // Getters
+    public double getGlobalEXP() {return globalEXP;}
+    public double getGlobalLVL() {return globalLVL;}
     public double getGlobalHP() { return globalHP; }
     public double getGlobalMP() { return globalMP; }
     public double getGlobalSTR() { return globalSTR; }
@@ -30,6 +36,8 @@ public class GlobalStatus {
     public double getGlobalINTEL() { return globalINTEL; }
 
     // Setters
+    public void setGlobalEXP() {this.globalEXP = globalEXP;}
+    public void setGlobalLVL() {this.globalLVL = globalLVL;}
     public void setGlobalHP(double globalHP) { this.globalHP = globalHP; }
     public void setGlobalMP(double globalMP) { this.globalMP = globalMP; }
     public void setGlobalSTR(double globalSTR) { this.globalSTR = globalSTR; }

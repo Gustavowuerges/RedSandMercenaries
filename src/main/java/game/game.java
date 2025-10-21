@@ -2,8 +2,8 @@ package main.java.game;
 
 import java.util.Scanner;
 
-import main.java.Map.MapGrid;
-import main.java.Map.MapRender;
+import main.java.Features.Map.MapGrid;
+import main.java.Features.Map.MapRender;
 
 
 public class game {

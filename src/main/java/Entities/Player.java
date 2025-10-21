@@ -1,13 +1,22 @@
 package main.java.Entities;
 import main.java.*;
 
-public abstract class Player extends GlobalStatus {
+public class Player extends GlobalStatus {
     Job job;
     public String name;
     public String className;
 
-    public Player(String name, String className, double hp, double mp, double str, double dex, double fort, double fth, double intel) {
-        super(hp, mp, str, dex, fort, fth, intel);
+    public Player(String name, Job job) {
+        super(1, 0, 0, 0, 0, 0, 0, 0, 0);
+        this.name = name;
+        this.className = job.getJOBNAME();
+        this.job = job;
+        defineStatus();
+    }
+
+
+    public void movement() {
+        
     }
 
     public void defineStatus() {
@@ -31,19 +40,26 @@ public abstract class Player extends GlobalStatus {
         final String CYAN = "\u001B[36m";
         final String MAGENTA = "\u001B[35m";
     
-        System.out.println(CYAN + "================ JOB STATUS ================" + RESET);
-        System.out.println(YELLOW + "STR: " + RESET + RED + getGlobalSTR() + RESET + " | " + 
-                           YELLOW + "DEX: " + RESET + GREEN + getGlobalDEX() + RESET + 
-                           " | " + YELLOW + "INT: " + RESET + CYAN + getGlobalINTEL() + RESET);
-        System.out.println(YELLOW + "FORT: " + RESET + MAGENTA + getGlobalFORT() + RESET + 
-                           " | " + YELLOW + "FTH: " + RESET + GREEN + getGlobalFAITH() + RESET);
-        System.out.println(CYAN + "===========================================" + RESET);
+        // Nome da classe/job
+        String jobName = (job != null) ? job.getJOBNAME() : "Nenhuma";
     
-        // ASCII template simples de barras de status
-        System.out.println("  [STR] " + "=".repeat((int)getGlobalSTR()) + ">");
-        System.out.println("  [DEX] " + "=".repeat((int)getGlobalDEX()) + ">");
-        System.out.println("  [INT] " + "=".repeat((int)getGlobalINTEL()) + ">");
-        System.out.println("  [FORT] " + "=".repeat((int)getGlobalFORT()) + ">");
-        System.out.println("  [FTH] " + "=".repeat((int)getGlobalFAITH()) + ">");
+        System.out.println(CYAN + "================ PLAYER STATUS ================" + RESET);
+        System.out.println(YELLOW + "Classe: " + RESET + jobName);
+        System.out.println(YELLOW + "STR: " + RESET + RED + getGlobalSTR() + RESET +
+                           " | DEX: " + RESET + GREEN + getGlobalDEX() + RESET +
+                           " | INT: " + RESET + CYAN + getGlobalINTEL() + RESET);
+        System.out.println(YELLOW + "FORT: " + RESET + MAGENTA + getGlobalFORT() + RESET +
+                           " | FTH: " + RESET + GREEN + getGlobalFAITH() + RESET);
+        System.out.println(CYAN + "=============================================" + RESET);
+    
+        // Barras simples
+        int maxBar = 20;
+        System.out.println("  [STR] " + "=".repeat(Math.max(1, (int)getGlobalSTR())) + ">");
+        System.out.println("  [DEX] " + "=".repeat(Math.max(1, (int)getGlobalDEX())) + ">");
+        System.out.println("  [INT] " + "=".repeat(Math.max(1, (int)getGlobalINTEL())) + ">");
+        System.out.println("  [FORT] " + "=".repeat(Math.max(1, (int)getGlobalFORT())) + ">");
+        System.out.println("  [FTH] " + "=".repeat(Math.max(1, (int)getGlobalFAITH())) + ">");
     }
+
+    
 }

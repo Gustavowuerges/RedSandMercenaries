@@ -20,6 +20,9 @@ public abstract class Job {
     public void description() {
     }
 
+    public void useSkill() {
+    }
+
    
     //Getters
     public String getJOBNAME() {return jobName;}

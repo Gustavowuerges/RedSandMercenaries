@@ -3,8 +3,8 @@ import main.java.Entities.Job;
 
 public class Archer extends Job {
 
-    public Archer(double str, double dex, double fort, double fth, double intel) {
-        super("Archer", str, dex, fort, fth, intel);
+    public Archer() {
+        super("Archer", 4, 8, 3, 3, 5);
     
     }
 
