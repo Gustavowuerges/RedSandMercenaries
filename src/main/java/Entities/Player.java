@@ -1,13 +1,42 @@
 package main.java.Entities;
 import main.java.*;
 
-public abstract class Player extends GlobalStatus {
+public class Player extends GlobalStatus {
     Job job;
+    private int playerX = 0;
+    private int playerY = 0;
     public String name;
     public String className;
 
-    public Player(String name, String className, double hp, double mp, double str, double dex, double fort, double fth, double intel) {
-        super(hp, mp, str, dex, fort, fth, intel);
+    public Player(String name, Job job) {
+        super(1, 0, 0, 0, 0, 0, 0, 0, 0);
+        this.name = (name != null) ? name : "Unknown";
+        if (job != null) {
+            this.job = job;
+            this.className = job.getJOBNAME();
+            defineStatus();
+        } else {
+            this.job = null;
+            this.className = "NoClass";
+        }
+    }
+
+
+    public void movement(String input) {
+        String up = "w";
+        String down = "s";
+        String left = "a";
+        String right = "d";
+
+        if(input.equals(up)) {
+            playerY--;
+        } else if(input.equals(down)) {
+            playerY++;
+        } else if(input.equals(left)) {
+            playerX--;
+        } else if(input.equals(right)) {
+            playerX++;
+        }
     }
 
     public void defineStatus() {
@@ -20,7 +49,7 @@ public abstract class Player extends GlobalStatus {
             setGlobalHP(job.getFORT() * 5);
             setGlobalMP((job.getFTH() + job.getINTEL()) * 0.5);
 
-        }
+        } 
     }
 
     public void displayStatus() {
@@ -31,19 +60,30 @@ public abstract class Player extends GlobalStatus {
         final String CYAN = "\u001B[36m";
         final String MAGENTA = "\u001B[35m";
     
-        System.out.println(CYAN + "================ JOB STATUS ================" + RESET);
-        System.out.println(YELLOW + "STR: " + RESET + RED + getGlobalSTR() + RESET + " | " + 
-                           YELLOW + "DEX: " + RESET + GREEN + getGlobalDEX() + RESET + 
-                           " | " + YELLOW + "INT: " + RESET + CYAN + getGlobalINTEL() + RESET);
-        System.out.println(YELLOW + "FORT: " + RESET + MAGENTA + getGlobalFORT() + RESET + 
-                           " | " + YELLOW + "FTH: " + RESET + GREEN + getGlobalFAITH() + RESET);
-        System.out.println(CYAN + "===========================================" + RESET);
+        // Nome da classe/job
+        String jobName = (job != null) ? job.getJOBNAME() : "Nenhuma";
     
-        // ASCII template simples de barras de status
-        System.out.println("  [STR] " + "=".repeat((int)getGlobalSTR()) + ">");
-        System.out.println("  [DEX] " + "=".repeat((int)getGlobalDEX()) + ">");
-        System.out.println("  [INT] " + "=".repeat((int)getGlobalINTEL()) + ">");
-        System.out.println("  [FORT] " + "=".repeat((int)getGlobalFORT()) + ">");
-        System.out.println("  [FTH] " + "=".repeat((int)getGlobalFAITH()) + ">");
+        System.out.println(CYAN + "================ PLAYER STATUS ================" + RESET);
+        System.out.println(YELLOW + "Classe: " + RESET + jobName);
+        System.out.println(YELLOW + "STR: " + RESET + RED + getGlobalSTR() + RESET +
+                           " | DEX: " + RESET + GREEN + getGlobalDEX() + RESET +
+                           " | INT: " + RESET + CYAN + getGlobalINTEL() + RESET);
+        System.out.println(YELLOW + "FORT: " + RESET + MAGENTA + getGlobalFORT() + RESET +
+                           " | FTH: " + RESET + GREEN + getGlobalFAITH() + RESET);
+        System.out.println(CYAN + "=============================================" + RESET);
+    
+        // Barras simples
+        int maxBar = 20;
+        System.out.println("  [STR] " + "=".repeat(Math.max(1, (int)getGlobalSTR())) + ">");
+        System.out.println("  [DEX] " + "=".repeat(Math.max(1, (int)getGlobalDEX())) + ">");
+        System.out.println("  [INT] " + "=".repeat(Math.max(1, (int)getGlobalINTEL())) + ">");
+        System.out.println("  [FORT] " + "=".repeat(Math.max(1, (int)getGlobalFORT())) + ">");
+        System.out.println("  [FTH] " + "=".repeat(Math.max(1, (int)getGlobalFAITH())) + ">");
     }
+
+    //Getters e Setters
+    public int getPlayerX() {return playerX;}
+    public int getPlayerY() {return playerY;}
+    public void setPlayerX(int playerX) {this.playerX = playerX;}
+    public void setPlayerY(int playerY) {this.playerY = playerY;}
 }
