@@ -3,20 +3,40 @@ import main.java.*;
 
 public class Player extends GlobalStatus {
     Job job;
+    private int playerX = 0;
+    private int playerY = 0;
     public String name;
     public String className;
 
     public Player(String name, Job job) {
         super(1, 0, 0, 0, 0, 0, 0, 0, 0);
-        this.name = name;
-        this.className = job.getJOBNAME();
-        this.job = job;
-        defineStatus();
+        this.name = (name != null) ? name : "Unknown";
+        if (job != null) {
+            this.job = job;
+            this.className = job.getJOBNAME();
+            defineStatus();
+        } else {
+            this.job = null;
+            this.className = "NoClass";
+        }
     }
 
 
-    public void movement() {
-        
+    public void movement(String input) {
+        String up = "w";
+        String down = "s";
+        String left = "a";
+        String right = "d";
+
+        if(input.equals(up)) {
+            playerY--;
+        } else if(input.equals(down)) {
+            playerY++;
+        } else if(input.equals(left)) {
+            playerX--;
+        } else if(input.equals(right)) {
+            playerX++;
+        }
     }
 
     public void defineStatus() {
@@ -29,7 +49,7 @@ public class Player extends GlobalStatus {
             setGlobalHP(job.getFORT() * 5);
             setGlobalMP((job.getFTH() + job.getINTEL()) * 0.5);
 
-        }
+        } 
     }
 
     public void displayStatus() {
@@ -61,5 +81,9 @@ public class Player extends GlobalStatus {
         System.out.println("  [FTH] " + "=".repeat(Math.max(1, (int)getGlobalFAITH())) + ">");
     }
 
-    
+    //Getters e Setters
+    public int getPlayerX() {return playerX;}
+    public int getPlayerY() {return playerY;}
+    public void setPlayerX(int playerX) {this.playerX = playerX;}
+    public void setPlayerY(int playerY) {this.playerY = playerY;}
 }
